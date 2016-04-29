@@ -46,8 +46,13 @@ public class MyFilter implements Filter {
                          FilterChain filterChain) throws IOException, ServletException {
         //在这里处理编码
         //过滤数据请求
+
         HttpServletResponse res=   (HttpServletResponse)servletResponse;
+
         HttpServletRequest request =(HttpServletRequest)servletRequest;
+        //设置编码处理
+       // request.setCharacterEncoding("utf-8");
+      //  res.setContentType("text/html;charset=utf-8");
         ServletContext servletContext = request.getSession().getServletContext();
         count++;
         servletContext.setAttribute("count",count);
